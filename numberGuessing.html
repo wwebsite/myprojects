@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing!</title>
+    <style>
+        #title{
+            text-align: center;
+            font-size: 60px;
+            font-family: arial;
+        }
+        #titleNum2{
+            text-align: center;
+            font-size: 35px;
+            font-family: arial;
+            font-weight: bold;
+        }
+        #lives{
+            font-size: 30px;
+            font-weight: bold;
+            font-family: arial;
+        }
+        #guess{
+            text-align: center;
+        }
+        #input{
+            margin-top: 5%;
+        }
+        #guess{
+            width: 500px;
+            height: 100px;
+            font-size: 25px;
+        }
+        #guessButton{
+            width: 100px;
+            height: 50px;
+            margin-top: 50px;
+        }
+        #lives{
+            display: flex;
+            flex-direction: row;
+        }
+        #restart button{
+            height: 25px;
+            width: 100px;
+        }
+        body{
+            background-color: rgb(228, 228, 228);
+        }
+        #easy{
+            width: 100px;
+            height: 50px;
+        }
+        #medium{
+            width: 100px;
+            height: 50px;
+        }
+        #hard{
+            width: 100px;
+            height: 50px;
+        }
+        #idk{
+            color: rgb(224, 37, 37);
+            margin-top: 100px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let mode = '';
+        let num = Math.floor(Math.random() * 11);
+        var numOfLives = 8;
+
+        function guessNumber(){
+        var guess = parseInt(document.getElementById('guess').value);
+        document.getElementById('livesLeft').innerHTML = numOfLives;
+
+            if (guess !== num) {
+                numOfLives -= 1
+                document.getElementById('idk').innerHTML = guess
+            }
+            if (guess === num && numOfLives > 0) {
+                document.getElementById('title').innerHTML = 'YOU GUESSED IT!!!'
+                document.getElementById('idk').innerHTML = guess
+                document.getElementById('idk').style.color = "green";
+                guesses.concat(guess)
+            }
+            if (numOfLives === -1) {
+                document.getElementById('title').innerHTML = 'GAME OVER! THE NUMBER WAS ' + num
+                numOfLives = 0
+            }
+        }
+        function restart(){
+            numOfLives = 8
+            num = Math.floor(Math.random() * 11);
+            document.getElementById('livesLeft').innerHTML = numOfLives;
+            document.getElementById('title').innerHTML = 'Number Guessing Game!!!';
+        }
+
+        function easy(){
+            numOfLives = 8 
+            document.getElementById('livesLeft').innerHTML = numOfLives;
+            mode = 'easy'
+        }
+        function medium(){
+            numOfLives = 5 
+            document.getElementById('livesLeft').innerHTML = numOfLives;
+            mode = 'medium'
+
+        }
+        function hard(){
+            numOfLives = 3 
+            document.getElementById('livesLeft').innerHTML = numOfLives;
+            mode = 'hard'
+        }
+
+    </script>
+
+    <div class="levelButtons" align="center">
+        <button onclick="easy()" id="easy">Easy</button>
+        <button onclick="medium()" id="medium">Medium</button>
+        <button onclick="hard()" id="hard">Hard</button>
+    </div>
+
+    <div id="everyThing">
+        <div id="lives" align="left">
+            <button onclick="restart()" id="restart button">Restart?</button>&nbsp;<p>lives left: &nbsp;</p> <p id="livesLeft">8</p>
+        </div>
+    
+        <h1 id="title">Number Guessing Game!!!</h1>
+        <p id="titleNum2">guess a number between 0-10</p>
+    
+        <div id="input" align="center">
+            <input type="text" id="guess" placeholder="Guess the number">
+        </div>
+    
+        <div id="button" align="center">
+            <button onclick="guessNumber()" id="guessButton">Guess!</button>
+        </div>
+
+        <h1 id="idk" align="center"></h1>
+     </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: rgb(187, 187, 187);
+        }
+        #answr{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            font-size: 50px;
+            font-family: arial;
+            margin-left: 40%;
+        }
+        #answrr{
+            color: rgb(38, 170, 199);
+        }
+        #title{
+            text-align: center;
+            font-size: 60px;
+            font-family: Arial;
+        }
+        #firstNum{
+            height: 50px;
+            width: 500px;
+            font-size: 25px;
+        }
+        #secondNum{
+            height: 50px;
+            width: 500px;
+            font-size: 25px;
+        }
+        #buttons{
+            margin-top: 50px;
+        }
+        #add{
+            width: 100px;
+            height: 50px;
+        }
+        #subtract{
+            width: 100px;
+            height: 50px;
+        }
+        #multiply{
+            width: 100px;
+            height: 50px;
+        }
+        #divide{
+            width: 100px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <script>
+        function add(){
+            var num1 = parseInt(document.getElementById('firstNum').value);
+            var num2 = parseInt(document.getElementById('secondNum').value);
+            var answer = num1 + num2; 
+            document.getElementById('answrr').innerHTML = answer;
+        }
+
+        function sub(){
+            var num1 = parseInt(document.getElementById('firstNum').value);
+            var num2 = parseInt(document.getElementById('secondNum').value);
+            var answer = num1 - num2; 
+            document.getElementById('answrr').innerHTML = answer;
+        }
+
+        function mul(){
+            var num1 = parseInt(document.getElementById('firstNum').value);
+            var num2 = parseInt(document.getElementById('secondNum').value);
+            var answer = num1 * num2; 
+            document.getElementById('answrr').innerHTML = answer;
+        }
+
+        function div(){
+            var num1 = parseInt(document.getElementById('firstNum').value);
+            var num2 = parseInt(document.getElementById('secondNum').value);
+            var answer = num1 / num2; 
+            document.getElementById('answrr').innerHTML = answer;
+        }
+    </script>
+
+    <h1 id="title">Calculator</h1>
+
+    <div id="inputs" align="center">
+    <input id="firstNum" type="text" placeholder="Enter first number">
+    <input id="secondNum" type="text" placeholder="Enter second number">
+    </div>
+
+    <div id="buttons" align="center">
+    <button id="add" onclick="add()">Add </button>
+    <button id="subtract" onclick="sub()">Subtract</button>
+    <button id="multiply" onclick="mul()">Multiply</button> 
+    <button id="divide" onclick="div()">Divide</button>
+    </div>
+
+    <div id="answr">
+        <p>answer = &nbsp;</p> <p id="answrr"></p>
+    </div>
+</body>
+</html>
