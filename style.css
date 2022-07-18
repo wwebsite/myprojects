@@ -26,8 +26,12 @@ body{
     color: white;
     display: flex;
     flex-direction: row;
-    margin-left: 20%;
-    margin-right: 20%;
+}
+.firstRow2{
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
 }
 #cal-h1{
     font-size: 50px;
@@ -44,7 +48,9 @@ a{
 }
 .number{
     padding: 100px;
+    margin-right: 20%;
 }
 .calculator{
     padding: 100px;
+    margin-left: 20%;
 }
