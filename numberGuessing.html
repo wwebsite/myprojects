@@ -80,6 +80,7 @@
             if (guess !== num) {
                 numOfLives -= 1
                 document.getElementById('idk').innerHTML = guess
+                document.getElementById('idk').style.color = "red"
             }
             if (guess === num && numOfLives > 0) {
                 document.getElementById('title').innerHTML = 'YOU GUESSED IT!!!'
@@ -96,6 +97,7 @@
             numOfLives = 8
             num = Math.floor(Math.random() * 11);
             document.getElementById('livesLeft').innerHTML = numOfLives;
+            document.getElementById('idk').style.color = "black";
             document.getElementById('title').innerHTML = 'Number Guessing Game!!!';
         }
 
